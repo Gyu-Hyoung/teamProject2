@@ -1,0 +1,135 @@
+<%-include('../components/header.ejs') %>
+<script src="/client/js/album.js" defer></script>
+</head>
+<body>
+  <div class="album-title">
+    <h1>Powerful Photo Tour</h1>
+    <div class="album-toggle"><i class="fa-solid fa-bars"></i></div>
+  </div>
+
+<div class="gallery">
+  <div class="gallery-container">
+    <div class="toolbar">
+      <div class="search-wrapper">
+        <input type="search" placeholder="Search for photos">
+        <div class="counter">
+            Total photos: <span>10</span></div>
+      </div>
+    
+      <ul class="view-options">
+        <li class="zoom">
+            <input type="range" min="100" max="250" value="100">
+        </li>
+        <li class="show-grid active">
+            <button>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/grid-view.svg"
+                    alt="grid view">
+            </button>
+        </li>
+        <li class="show-list">
+            <button>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/list-view.svg"
+                    alt="list view">
+            </button>
+        </li>
+    </ul>
+    </div>
+
+    <ol class="image-list grid-view">
+      <li>
+          <figure>
+              <img src="/file/images/album1.jpg" alt="">
+              <figcaption>
+                  <p>송해공원에서</p>
+                  <p><a href="#" target="_blank">올리기</a></p>
+              </figcaption>
+          </figure>
+      </li>
+      <li>
+          <figure>
+              <img src="/file/images/album2.jpg" alt="">
+              <figcaption>
+                  <p>송해공원에서</p>
+                  <p><a href="#" target="_blank">올리기</a></p>
+              </figcaption>
+          </figure>
+      </li>
+      <li>
+          <figure>
+              <img src="/file/images/album3.jpg" alt="">
+              <figcaption>
+                  <p>팔공산에서</p>
+                  <p><a href="#" target="_blank">올리기</a></p>
+              </figcaption>
+          </figure>
+      </li>
+      <li>
+          <figure>
+              <img src="/file/images/album4.jpg" alt="">
+              <figcaption>
+                  <p>금호강에서</p>
+                  <p><a href="#" target="_blank">올리기</a></p>
+              </figcaption>
+          </figure>
+      </li>
+      <li>
+          <figure>
+              <img src="/file/images/album5.jpg" alt="">
+              <figcaption>
+                  <p>화랑교에서</p>
+                  <p><a href="#" target="_blank">올리기</a></p>
+              </figcaption>
+          </figure>
+      </li>
+      <li>
+          <figure>
+              <img src="/file/images/album6.jpg" alt="">
+              <figcaption>
+                  <p>앞산에서</p>
+                  <p><a href="#" target="_blank">올리기</a></p>
+              </figcaption>
+          </figure>
+      </li>
+      <li>
+          <figure>
+              <img src="/file/images/album7.jpg" alt="">
+              <figcaption>
+                  <p>집에서</p>
+                  <p><a href="#" target="_blank">올리기</a></p>
+              </figcaption>
+          </figure>
+      </li>
+      <li>
+          <figure>
+              <img src="/file/images/album8.jpg" alt="">
+              <figcaption>
+                  <p>형제봉에서</p>
+                  <p><a href="#" target="_blank">올리기</a></p>
+              </figcaption>
+          </figure>
+      </li>
+      <li>
+          <figure>
+              <img src="/file/images/album9.jpg" alt="">
+              <figcaption>
+                  <p>갓바위에서</p>
+                  <p><a href="#" target="_blank">올리기</a></p>
+              </figcaption>
+          </figure>
+      </li>
+      <li>
+          <figure>
+              <img src="/file/images/album10.jpg" alt="">
+              <figcaption>
+                  <p>수변공원에서</p>
+                  <p><a href="#" target="_blank">올리기</a></p>
+              </figcaption>
+          </figure>
+      </li>
+  
+  </ol>
+
+  </div>
+</div>
+
+<%-include('../components/footer.ejs') %>

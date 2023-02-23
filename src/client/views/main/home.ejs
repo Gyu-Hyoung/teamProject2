@@ -1,0 +1,152 @@
+<%-include('../components/header.ejs') %>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="/client/js/home.js" defer></script>
+</head>
+<body>
+
+  <div class="sideNav">
+    <ul class="gnb">
+      <li class="on">
+          <a href="#" class='closeBtn'>></a>
+          PPT
+      </li>
+      <li>
+          <a href="#">사진첩</a>
+          <ul>
+            <li><a href="#">모두보기</a></li>
+            <li><a href="#">나만의 사진</a></li>
+            <li><a href="#">가족사진</a></li>
+            <li><a href="#">커플사진</a></li>
+          </ul>
+      </li>
+      <li>
+        <a href="#">Exhibition Guide</a>
+      </li>
+      <li>
+        <a href="#">Notice</a>
+      </li>
+      <li>
+        <a href="#">Inquiry</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="title-wrap">
+    <h1>PPT</h1>
+    <input class="search" type="search" name="" id="">
+    <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+  </div>
+
+
+  <section class="banner">
+    <ul class="banner-container">
+      <li class="banner-slide">
+        <div class="contents">
+          <h3>선착순 1,000명에게 쏩니다.</h3>
+          <h2>해외 여행 특가 이벤트</h2>
+          <p><span>캐리어 증정</span><span>동반인 50% 할인</span></p>
+        </div>
+      </li>
+      <li class="banner-slide">
+        <div class="contents">
+          <h3>선착순 1,000명에게 쏩니다.</h3>
+          <h2>해외 여행 특가 이벤트</h2>
+          <p><span>캐리어 증정</span><span>동반인 50% 할인</span></p>
+        </div>
+      </li>
+      <li class="banner-slide">
+        <div class="contents">
+          <h3>선착순 1,000명에게 쏩니다.</h3>
+          <h2>해외 여행 특가 이벤트</h2>
+          <p><span>캐리어 증정</span><span>동반인 50% 할인</span></p>
+        </div>
+      </li>
+    </ul>
+
+    <a href="#" id="prev" class="controls"
+      ><i class="fas fa-chevron-left"></i
+    ></a>
+    <a href="#" id="next" class="controls"
+      ><i class="fas fa-chevron-right"></i
+    ></a>
+  </section>
+
+  <div class="slide-wrap">
+    <h2>핫 플레이스</h2>
+    <div class="swiper mySwiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <% for (let i=0; i < course.length; i++) {%>
+        <div class="swiper-slide slide<%= [i] %>">
+          <div class="contents">
+            <h2><%= course[i].name %></h2>
+            <p>대구시 중구</p>
+          </div>
+        </div>
+        <% } %>
+
+  </div>
+
+  <div class="best-shot">
+    <h2>베스트 샷!</h2>
+    <ul id='shot-container'></ul>
+    <div id="lightbox-overlay">
+      <div class="overlay-inner">
+        <img
+          src=""
+          alt="Lightbox image"
+          title="Click anywhere to close"
+          id="lightbox-image"
+        />
+        <div class="box-content">
+          <span>♥</span>
+          <span>256</span>
+          <span id='close-overlay'>닫기</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="achieve">
+    <div id="achieve-title">
+      <h2>투어 달성</h2>
+      <div id="progress">
+        <progress value="0" max="100"></progress>
+        <div id="progressNum">
+          <h5></h5>
+        </div>
+        <div id="flagimg">
+          <i class="fa-regular fa-flag"></i>
+        </div>
+      </div>
+    </div>
+    <div class="list-wrap">
+      <% for (let i=0; i < course.length; i++) {%>
+        <div class="list"
+          data-name="<%= course[i].name %>" 
+          data-code="<%= course[i].code %>"
+          data-latitude="<%= course[i].latitude %>" 
+          data-longitude="<%= course[i].longitude %>"
+          data-visited="<%= course[i].visited %>"
+        >
+          <div class="<%= course[i].bg %>"></div>
+            <div class="context">
+              <h2 class="place-name"><%= course[i].name %></h2>
+              <h3 class="addr"><%= course[i].address %></h3>
+            </div>
+            <% if (course[i].visited==="Y" ) { %>
+            <div class="stamp test"><i class="fa-regular fa-flag"></i></div> 
+            <% } else { %>       
+            <div class="stamp"><i class="fa-regular fa-flag"></i></div> 
+            <% } %>
+        </div>
+        <% } %>
+      
+
+    </div>
+  </div>
+  
+  <div class="space"></div>
+<%-include('../components/footer.ejs') %>
